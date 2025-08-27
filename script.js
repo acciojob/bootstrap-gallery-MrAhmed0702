@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const triggers = document.querySelectorAll('.lightbox');
-  const imgEl = document.getElementById('lightboxImage');
+  const container = document.getElementById('lightboxContainer');
   let currentIndex = 0;
 
-  // open modal with clicked image
   triggers.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // navigation buttons
   document.getElementById('prevBtn').addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
     showImage(currentIndex);
@@ -24,6 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showImage(index) {
     const src = triggers[index].dataset.img;
-    imgEl.src = src;
+    container.innerHTML = `<img src="${src}" class="w-100 rounded" alt="Expanded gallery image">`;
   }
 });

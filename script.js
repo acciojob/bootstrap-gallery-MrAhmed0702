@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const triggers = document.querySelectorAll('.lightbox-trigger');
+  const triggers = document.querySelectorAll('.lightbox');
   const imgEl = document.getElementById('lightboxImage');
   let currentIndex = 0;
 
